@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>موقع الأمريكي | خدمات الأرقام والواتساب الاحترافية</title>
+    <title>موقع الأمريكي | خدمات الأرقام والاشتراكات الاحترافية</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
@@ -15,15 +15,13 @@
         
         <!-- قسم الشعار والعنوان الرئيسي -->
         <div class="flex items-center gap-4 text-center md:text-right">
-            <!-- أيقونة الشريحة العالمية -->
             <div class="relative bg-gradient-to-tr from-blue-600 to-indigo-500 p-3.5 rounded-2xl shadow-xl shadow-blue-500/20 text-white flex items-center justify-center">
                 <i class="fas fa-sim-card text-3xl"></i>
                 <i class="fas fa-globe text-xs absolute bottom-2 right-2 text-amber-300 bg-slate-900 rounded-full p-0.5"></i>
             </div>
             <div>
                 <h1 class="text-2xl font-black text-blue-500 tracking-wide">⚡️ الأمريكي</h1>
-                <!-- العبارة الترويجية بحجم خط واضح -->
-                <p class="text-base font-bold text-amber-400 mt-0.5">مع الأمريكي احصل على رقمك خلال ثواني 🚀</p>
+                <p class="text-base font-bold text-amber-400 mt-0.5">مع الأمريكي احصل على رقمك وخدمتك خلال ثواني 🚀</p>
             </div>
         </div>
 
@@ -55,7 +53,9 @@
             <div class="w-full md:w-auto flex-1 max-w-md">
               <p class="text-xs text-gray-300 mb-2">
                 💡 لشحن الرصيد (أقل شحنة <span class="text-amber-400 font-bold">5$</span> عبر شام كاش): 
-                تواصل معنا لإرسال المبلغ واستلام كود الشحن.
+                <a href="https://wa.me/963984335910?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%B4%D8%AD%D9%86%20%D8%B1%D8%B5%D9%8A%D8%AF%20%D9%81%D9%8A%20%D8%A7%D9%84%D9%85%D9%88%D9%82%D8%B9" target="_blank" class="text-amber-400 font-bold underline hover:text-amber-300">
+                    تواصل معنا عبر الواتساب لإرسال المبلغ واستلام كود الشحن
+                </a>.
               </p>
               
               <div class="flex gap-2">
@@ -70,10 +70,104 @@
             </div>
 
           </div>
-        </div>
+        </div><!-- قسم الاشتراكات والخدمات المميزة -->
+        <section>
+            <h2 class="text-xl font-bold text-purple-400 mb-4 flex items-center gap-2">
+                <i class="fas fa-gem"></i> الاشتراكات والخدمات المميزة
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                
+                <!-- اشتراك جميناي بريميوم -->
+                <div class="bg-slate-800 p-6 rounded-2xl border border-purple-500/30 shadow-xl flex flex-col justify-between hover:border-purple-500/60 transition">
+                    <div>
+                        <div class="flex justify-between items-start mb-3">
+                            <span class="bg-purple-500/10 text-purple-400 text-xs px-3 py-1 rounded-full border border-purple-500/20 font-semibold">اشتراك شهر</span>
+                            <span class="text-2xl font-black text-purple-400">$10</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 flex items-center gap-2">
+                            <i class="fas fa-robot text-purple-400"></i> اشتراك جميناي بريميوم (Gemini Premium)
+                        </h3>
+                        <p class="text-sm text-gray-300 leading-relaxed mb-4">
+                            تفعيل التلغرام والذكاء الاصطناعي الخاص بـ Gemini بأعلى سرعة وأداء متميز بدون قيود لمدة شهر كامل.
+                        </p>
+                    </div>
+                    <button onclick="openGeminiModal()" class="w-full bg-purple-600 hover:bg-purple-700 text-white font-extrabold py-3 rounded-xl transition duration-200 text-center flex justify-center items-center gap-2 shadow-lg">
+                        <i class="fas fa-shopping-cart"></i> شراء الآن ($10)
+                    </button>
+                </div>
+
+                <!-- تفعيل تلغرام بريميوم -->
+                <div class="bg-slate-800 p-6 rounded-2xl border border-blue-500/30 shadow-xl flex flex-col justify-between hover:border-blue-500/60 transition">
+                    <div>
+                        <div class="flex justify-between items-start mb-3">
+                            <span class="bg-blue-500/10 text-blue-400 text-xs px-3 py-1 rounded-full border border-blue-500/20 font-semibold">اشتراك شهر</span>
+                            <span class="text-2xl font-black text-blue-400">$10</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 flex items-center gap-2">
+                            <i class="fab fa-telegram text-blue-400"></i> تفعيل تلغرام بريميوم (Telegram Premium)
+                        </h3>
+                        <p class="text-sm text-gray-300 leading-relaxed mb-4">
+                            احصل على كافة مميزات التلغرام البريميوم، الميزات الحصرية، الرموز التعبيرية والتنزيل السريع لمدة شهر.
+                        </p>
+                    </div>
+                    <button onclick="openTelegramModal()" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-extrabold py-3 rounded-xl transition duration-200 text-center flex justify-center items-center gap-2 shadow-lg">
+                        <i class="fas fa-shopping-cart"></i> شراء الآن ($10)
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- قسم متجر أرقام الواتساب (عربية وأجنبية) -->
+        <section>
+            <h2 class="text-xl font-bold text-emerald-400 mb-4 flex items-center gap-2">
+                <i class="fab fa-whatsapp"></i> متجر أرقام الواتساب المباشرة
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                
+                <!-- أرقام واتساب عربية -->
+                <div class="bg-slate-800 p-6 rounded-2xl border border-emerald-500/30 shadow-xl flex flex-col justify-between hover:border-emerald-500/60 transition"><div>
+                        <div class="flex justify-between items-start mb-3">
+                            <span class="bg-emerald-500/10 text-emerald-400 text-xs px-3 py-1 rounded-full border border-emerald-500/20 font-semibold">رقم جاهز</span>
+                            <span class="text-2xl font-black text-emerald-400">$7</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 flex items-center gap-2">
+                            <i class="fas fa-flag text-emerald-400"></i> أرقام واتساب عربية
+                        </h3>
+                        <p class="text-sm text-gray-300 leading-relaxed mb-4">
+                            تفعيل واتساب بأرقام عربية مميزة (السعودية، الأردن، الكويت) بسرعة وجودة عالية.
+                        </p>
+                    </div>
+                    <button onclick="openArabModal()" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold py-3 rounded-xl transition duration-200 text-center flex justify-center items-center gap-2 shadow-lg">
+                        <i class="fas fa-globe-asia"></i> اختيار الدولة والشراء ($7)
+                    </button>
+                </div>
+
+                <!-- أرقام واتساب أجنبية -->
+                <div class="bg-slate-800 p-6 rounded-2xl border border-teal-500/30 shadow-xl flex flex-col justify-between hover:border-teal-500/60 transition">
+                    <div>
+                        <div class="flex justify-between items-start mb-3">
+                            <span class="bg-teal-500/10 text-teal-400 text-xs px-3 py-1 rounded-full border border-teal-500/20 font-semibold">رقم جاهز</span>
+                            <span class="text-2xl font-black text-teal-400">$7</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2 flex items-center gap-2">
+                            <i class="fas fa-globe-americas text-teal-400"></i> أرقام واتساب أجنبية
+                        </h3>
+                        <p class="text-sm text-gray-300 leading-relaxed mb-4">
+                            تفعيل واتساب بأرقام أجنبية مضمونة (إندونيسيا، فيتنام، إيران) مفعلة وجاهزة فوراً.
+                        </p>
+                    </div>
+                    <button onclick="openForeignModal()" class="w-full bg-teal-600 hover:bg-teal-700 text-white font-extrabold py-3 rounded-xl transition duration-200 text-center flex justify-center items-center gap-2 shadow-lg">
+                        <i class="fas fa-globe"></i> اختيار الدولة والشراء ($7)
+                    </button>
+                </div>
+
+            </div>
+        </section>
 
         <!-- قسم الخدمات الخاصة والمشددة -->
-        <section><h2 class="text-xl font-bold text-amber-400 mb-4 flex items-center gap-2">
+        <section>
+            <h2 class="text-xl font-bold text-amber-400 mb-4 flex items-center gap-2">
                 <i class="fas fa-user-shield"></i> خدمات الواتساب المشددة والخاصة
             </h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -87,8 +181,7 @@
                         </div>
                         <h3 class="text-lg font-bold text-white mb-2 flex items-center gap-2">
                             <i class="fas fa-lock-open text-amber-400"></i> فك أرقام واتساب مشدد
-                        </h3>
-                        <p class="text-sm text-gray-300 leading-relaxed mb-4">
+                        </h3><p class="text-sm text-gray-300 leading-relaxed mb-4">
                             حل مشاكل الحظر المشدد، الحظر الدائم، وحظر الانتهاك لجميع أرقام الواتساب بسرعة وكفاءة عالية.
                         </p>
                     </div>
@@ -126,10 +219,10 @@
                 <h2 class="text-xl font-bold text-blue-400 mb-4 flex items-center gap-2">
                     <i class="fas fa-sim-card"></i> طلب أرقام تفعيل (OTP)
                 </h2>
-
                 <div class="space-y-4">
                     <div>
-                        <label class="block text-sm font-medium mb-1 text-gray-300">اختر الدولة:</label><select id="country" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-3 text-white focus:outline-none focus:border-blue-500">
+                        <label class="block text-sm font-medium mb-1 text-gray-300">اختر الدولة:</label>
+                        <select id="country" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-3 text-white focus:outline-none focus:border-blue-500">
                             <option value="🇸🇦 السعودية (+966)">🇸🇦 المملكة العربية السعودية (+966)</option>
                             <option value="🇦🇪 الإمارات (+971)">🇦🇪 الإمارات العربية المتحدة (+971)</option>
                             <option value="🇰🇼 الكويت (+965)">🇰🇼 الكويت (+965)</option>
@@ -140,9 +233,7 @@
                             <option value="🇮🇩 إندونيسيا (+62)">🇮🇩 إندونيسيا (+62)</option>
                             <option value="🇺🇸 أمريكا (+1)">🇺🇸 الولايات المتحدة (+1)</option>
                         </select>
-                    </div>
-
-                    <div>
+                    </div><div>
                         <label class="block text-sm font-medium mb-1 text-gray-300">اختر التطبيق:</label>
                         <select id="service" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-3 text-white focus:outline-none focus:border-blue-500">
                             <option value="واتساب">WhatsApp - واتساب</option>
@@ -174,7 +265,6 @@
                 <h2 class="text-xl font-bold text-green-400 flex items-center gap-2">
                     <i class="fas fa-wallet"></i> طرق الدفع المتاحة
                 </h2>
-
                 <!-- شام كاش -->
                 <div class="bg-slate-900 p-4 rounded-xl border border-slate-700">
                     <div class="flex items-center justify-between mb-2">
@@ -185,7 +275,8 @@
                     <div class="bg-slate-950 p-2.5 rounded-lg text-xs font-mono text-gray-200 select-all border border-slate-800 break-all">
                         acaf0bc3dbb14343c3502bdbb345c90d
                     </div>
-                </div><!-- بينانس -->
+                </div>
+                <!-- بينانس -->
                 <div class="bg-slate-900 p-4 rounded-xl border border-slate-700">
                     <div class="flex items-center justify-between mb-2">
                         <span class="font-bold text-yellow-500">Binance Pay / Crypto</span>
@@ -202,7 +293,134 @@
 
     </main>
 
+    <!-- Modal النوافذ المنبثقة للخدمات والمنتجات -->
+
+    <!-- 1. نافذة جميناي بريميوم -->
+    <div id="geminiModal" class="fixed inset-0 bg-black/70 backdrop-blur-sm hidden flex justify-center items-center p-4 z-50"><div class="bg-slate-800 border border-purple-500/50 p-6 rounded-2xl max-w-md w-full shadow-2xl space-y-4">
+            <h3 class="text-lg font-bold text-purple-400 flex items-center gap-2">
+                <i class="fas fa-robot"></i> تفعيل جميناي بريميوم ($10)
+            </h3>
+            <p class="text-xs text-gray-300">يرجى كتابة البريد الإلكتروني وكلمة المرور الخاصة بحسابك ليتم الشحن والتفعيل عليه مباشرة:</p>
+            <div>
+                <label class="block text-xs mb-1 text-gray-400">البريد الإلكتروني:</label>
+                <input type="email" id="gemini-email" placeholder="example@gmail.com" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-2.5 text-sm text-white focus:outline-none focus:border-purple-500">
+            </div>
+            <div>
+                <label class="block text-xs mb-1 text-gray-400">كلمة المرور:</label>
+                <input type="password" id="gemini-pass" placeholder="••••••••" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-2.5 text-sm text-white focus:outline-none focus:border-purple-500">
+            </div>
+            <div class="flex gap-2 pt-2">
+                <button onclick="submitGeminiOrder()" class="flex-1 bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 rounded-xl text-sm transition">تأكيد ورسالة الطلب</button>
+                <button onclick="closeModal('geminiModal')" class="bg-slate-700 hover:bg-slate-600 text-white px-4 py-2 rounded-xl text-sm transition">إلغاء</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. نافذة تلغرام بريميوم -->
+    <div id="telegramModal" class="fixed inset-0 bg-black/70 backdrop-blur-sm hidden flex justify-center items-center p-4 z-50">
+        <div class="bg-slate-800 border border-blue-500/50 p-6 rounded-2xl max-w-md w-full shadow-2xl space-y-4">
+            <h3 class="text-lg font-bold text-blue-400 flex items-center gap-2">
+                <i class="fab fa-telegram"></i> تفعيل تلغرام بريميوم ($10)
+            </h3>
+            <p class="text-xs text-gray-300">أدخل يوزر (معرّف) حسابك على التلغرام لتنفيذ طلب التفعيل:</p>
+            <div>
+                <label class="block text-xs mb-1 text-gray-400">اسم المستخدم (Username):</label>
+                <input type="text" id="telegram-username" placeholder="@username" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-2.5 text-sm text-white focus:outline-none focus:border-blue-500">
+            </div>
+            <div class="flex gap-2 pt-2">
+                <button onclick="submitTelegramOrder()" class="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-xl text-sm transition">تأكيد ورسالة الطلب</button>
+                <button onclick="closeModal('telegramModal')" class="bg-slate-700 hover:bg-slate-600 text-white px-4 py-2 rounded-xl text-sm transition">إلغاء</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. نافذة أرقام واتساب عربية -->
+    <div id="arabModal" class="fixed inset-0 bg-black/70 backdrop-blur-sm hidden flex justify-center items-center p-4 z-50">
+        <div class="bg-slate-800 border border-emerald-500/50 p-6 rounded-2xl max-w-md w-full shadow-2xl space-y-4">
+            <h3 class="text-lg font-bold text-emerald-400 flex items-center gap-2">
+                <i class="fas fa-flag"></i> اختيار دولة الرقم العربي ($7)
+            </h3>
+            <p class="text-xs text-gray-300">اختر الدولة المطلوبة للحصول على رقم واتساب جاهز:</p>
+            <div>
+                <label class="block text-xs mb-1 text-gray-400">الدولة:</label>
+                <select id="arab-country" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-2.5 text-sm text-white focus:outline-none focus:border-emerald-500">
+                    <option value="السعودية 🇸🇦 (+966)">🇸🇦 المملكة العربية السعودية (+966)</option><option value="الأردن 🇯🇴 (+962)">🇯🇴 الأردن (+962)</option>
+                    <option value="الكويت 🇰🇼 (+965)">🇰🇼 الكويت (+965)</option>
+                </select>
+            </div>
+            <div class="flex gap-2 pt-2">
+                <button onclick="submitArabOrder()" class="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2 rounded-xl text-sm transition">تأكيد والشراء</button>
+                <button onclick="closeModal('arabModal')" class="bg-slate-700 hover:bg-slate-600 text-white px-4 py-2 rounded-xl text-sm transition">إلغاء</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4. نافذة أرقام واتساب أجنبية -->
+    <div id="foreignModal" class="fixed inset-0 bg-black/70 backdrop-blur-sm hidden flex justify-center items-center p-4 z-50">
+        <div class="bg-slate-800 border border-teal-500/50 p-6 rounded-2xl max-w-md w-full shadow-2xl space-y-4">
+            <h3 class="text-lg font-bold text-teal-400 flex items-center gap-2">
+                <i class="fas fa-globe"></i> اختيار دولة الرقم الأجنبي ($7)
+            </h3>
+            <p class="text-xs text-gray-300">اختر الدولة المطلوبة للحصول على رقم أجنبي:</p>
+            <div>
+                <label class="block text-xs mb-1 text-gray-400">الدولة:</label>
+                <select id="foreign-country" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-2.5 text-sm text-white focus:outline-none focus:border-teal-500">
+                    <option value="إندونيسيا 🇮🇩 (+62)">🇮🇩 إندونيسيا (+62)</option>
+                    <option value="فيتنام 🇻🇳 (+84)">🇻🇳 فيتنام (+84)</option>
+                    <option value="إيران 🇮🇷 (+98)">🇮🇷 إيران (+98)</option>
+                </select>
+            </div>
+            <div class="flex gap-2 pt-2">
+                <button onclick="submitForeignOrder()" class="flex-1 bg-teal-600 hover:bg-teal-700 text-white font-bold py-2 rounded-xl text-sm transition">تأكيد والشراء</button>
+                <button onclick="closeModal('foreignModal')" class="bg-slate-700 hover:bg-slate-600 text-white px-4 py-2 rounded-xl text-sm transition">إلغاء</button>
+            </div>
+        </div>
+    </div>
+
     <script>
+        // إغلاق النوافذ المنبثقة
+        function closeModal(id) {
+            document.getElementById(id).classList.add('hidden');
+        }
+
+        // فتح النوافذ
+        function openGeminiModal() { document.getElementById('geminiModal').classList.remove('hidden'); }
+        function openTelegramModal() { document.getElementById('telegramModal').classList.remove('hidden'); }
+        function openArabModal() { document.getElementById('arabModal').classList.remove('hidden'); }
+        function openForeignModal() { document.getElementById('foreignModal').classList.remove('hidden'); }
+
+        // إرسال الطلبات للواتساب
+        function submitGeminiOrder() {
+            const email = document.getElementById('gemini-email').value;
+            const pass = document.getElementById('gemini-pass').value;
+            if(!email || !pass) { alert("يرجى كتابة البريد وكلمة المرور!"); return; }
+            const msg = encodeURIComponent(أرغب في شراء اشتراك جميناي بريميوم ($10)\nالبريد: ${email}\nكلمة المرور: ${pass});
+            window.open(https://wa.me/963984335910?text=${msg}, '_blank');
+            closeModal('geminiModal');
+        }
+
+        function submitTelegramOrder() {
+            const user = document.getElementById('telegram-username').value;
+            if(!user) { alert("يرجى كتابة اسم المستخدم (اليوزر)!"); return; }
+            const msg = encodeURIComponent(أرغب في تفعيل تلغرام بريميوم ($10)\nاسم المستخدم: ${user});
+            window.open(https://wa.me/963984335910?text=${msg}, '_blank');
+            closeModal('telegramModal');
+        }
+
+        function submitArabOrder() {const country = document.getElementById('arab-country').value;
+            const msg = encodeURIComponent(أرغب في شراء رقم واتساب عربي ($7)\nالدولة المختارة: ${country});
+            window.open(https://wa.me/963984335910?text=${msg}, '_blank');
+            closeModal('arabModal');
+        }
+
+        function submitForeignOrder() {
+            const country = document.getElementById('foreign-country').value;
+            const msg = encodeURIComponent(أرغب في شراء رقم واتساب أجنبي ($7)\nالدولة المختارة: ${country});
+            window.open(https://wa.me/963984335910?text=${msg}, '_blank');
+            closeModal('foreignModal');
+        }
+
+        // طلب رقم OTP العام
         async function requestNumber() {
             const country = document.getElementById('country').value;
             const service = document.getElementById('service').value;
