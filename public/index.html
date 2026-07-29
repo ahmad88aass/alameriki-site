@@ -293,131 +293,41 @@
 
     </main>
 
-    <!-- Modal النوافذ المنبثقة للخدمات والمنتجات -->
-
-    <!-- 1. نافذة جميناي بريميوم -->
-    <div id="geminiModal" class="fixed inset-0 bg-black/70 backdrop-blur-sm hidden flex justify-center items-center p-4 z-50"><div class="bg-slate-800 border border-purple-500/50 p-6 rounded-2xl max-w-md w-full shadow-2xl space-y-4">
-            <h3 class="text-lg font-bold text-purple-400 flex items-center gap-2">
-                <i class="fas fa-robot"></i> تفعيل جميناي بريميوم ($10)
-            </h3>
-            <p class="text-xs text-gray-300">يرجى كتابة البريد الإلكتروني وكلمة المرور الخاصة بحسابك ليتم الشحن والتفعيل عليه مباشرة:</p>
-            <div>
-                <label class="block text-xs mb-1 text-gray-400">البريد الإلكتروني:</label>
-                <input type="email" id="gemini-email" placeholder="example@gmail.com" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-2.5 text-sm text-white focus:outline-none focus:border-purple-500">
-            </div>
-            <div>
-                <label class="block text-xs mb-1 text-gray-400">كلمة المرور:</label>
-                <input type="password" id="gemini-pass" placeholder="••••••••" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-2.5 text-sm text-white focus:outline-none focus:border-purple-500">
-            </div>
-            <div class="flex gap-2 pt-2">
-                <button onclick="submitGeminiOrder()" class="flex-1 bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 rounded-xl text-sm transition">تأكيد ورسالة الطلب</button>
-                <button onclick="closeModal('geminiModal')" class="bg-slate-700 hover:bg-slate-600 text-white px-4 py-2 rounded-xl text-sm transition">إلغاء</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- 2. نافذة تلغرام بريميوم -->
-    <div id="telegramModal" class="fixed inset-0 bg-black/70 backdrop-blur-sm hidden flex justify-center items-center p-4 z-50">
-        <div class="bg-slate-800 border border-blue-500/50 p-6 rounded-2xl max-w-md w-full shadow-2xl space-y-4">
-            <h3 class="text-lg font-bold text-blue-400 flex items-center gap-2">
-                <i class="fab fa-telegram"></i> تفعيل تلغرام بريميوم ($10)
-            </h3>
-            <p class="text-xs text-gray-300">أدخل يوزر (معرّف) حسابك على التلغرام لتنفيذ طلب التفعيل:</p>
-            <div>
-                <label class="block text-xs mb-1 text-gray-400">اسم المستخدم (Username):</label>
-                <input type="text" id="telegram-username" placeholder="@username" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-2.5 text-sm text-white focus:outline-none focus:border-blue-500">
-            </div>
-            <div class="flex gap-2 pt-2">
-                <button onclick="submitTelegramOrder()" class="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-xl text-sm transition">تأكيد ورسالة الطلب</button>
-                <button onclick="closeModal('telegramModal')" class="bg-slate-700 hover:bg-slate-600 text-white px-4 py-2 rounded-xl text-sm transition">إلغاء</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- 3. نافذة أرقام واتساب عربية -->
-    <div id="arabModal" class="fixed inset-0 bg-black/70 backdrop-blur-sm hidden flex justify-center items-center p-4 z-50">
-        <div class="bg-slate-800 border border-emerald-500/50 p-6 rounded-2xl max-w-md w-full shadow-2xl space-y-4">
-            <h3 class="text-lg font-bold text-emerald-400 flex items-center gap-2">
-                <i class="fas fa-flag"></i> اختيار دولة الرقم العربي ($7)
-            </h3>
-            <p class="text-xs text-gray-300">اختر الدولة المطلوبة للحصول على رقم واتساب جاهز:</p>
-            <div>
-                <label class="block text-xs mb-1 text-gray-400">الدولة:</label>
-                <select id="arab-country" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-2.5 text-sm text-white focus:outline-none focus:border-emerald-500">
-                    <option value="السعودية 🇸🇦 (+966)">🇸🇦 المملكة العربية السعودية (+966)</option><option value="الأردن 🇯🇴 (+962)">🇯🇴 الأردن (+962)</option>
-                    <option value="الكويت 🇰🇼 (+965)">🇰🇼 الكويت (+965)</option>
-                </select>
-            </div>
-            <div class="flex gap-2 pt-2">
-                <button onclick="submitArabOrder()" class="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2 rounded-xl text-sm transition">تأكيد والشراء</button>
-                <button onclick="closeModal('arabModal')" class="bg-slate-700 hover:bg-slate-600 text-white px-4 py-2 rounded-xl text-sm transition">إلغاء</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- 4. نافذة أرقام واتساب أجنبية -->
-    <div id="foreignModal" class="fixed inset-0 bg-black/70 backdrop-blur-sm hidden flex justify-center items-center p-4 z-50">
-        <div class="bg-slate-800 border border-teal-500/50 p-6 rounded-2xl max-w-md w-full shadow-2xl space-y-4">
-            <h3 class="text-lg font-bold text-teal-400 flex items-center gap-2">
-                <i class="fas fa-globe"></i> اختيار دولة الرقم الأجنبي ($7)
-            </h3>
-            <p class="text-xs text-gray-300">اختر الدولة المطلوبة للحصول على رقم أجنبي:</p>
-            <div>
-                <label class="block text-xs mb-1 text-gray-400">الدولة:</label>
-                <select id="foreign-country" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-2.5 text-sm text-white focus:outline-none focus:border-teal-500">
-                    <option value="إندونيسيا 🇮🇩 (+62)">🇮🇩 إندونيسيا (+62)</option>
-                    <option value="فيتنام 🇻🇳 (+84)">🇻🇳 فيتنام (+84)</option>
-                    <option value="إيران 🇮🇷 (+98)">🇮🇷 إيران (+98)</option>
-                </select>
-            </div>
-            <div class="flex gap-2 pt-2">
-                <button onclick="submitForeignOrder()" class="flex-1 bg-teal-600 hover:bg-teal-700 text-white font-bold py-2 rounded-xl text-sm transition">تأكيد والشراء</button>
-                <button onclick="closeModal('foreignModal')" class="bg-slate-700 hover:bg-slate-600 text-white px-4 py-2 rounded-xl text-sm transition">إلغاء</button>
-            </div>
-        </div>
-    </div>
-
     <script>
-        // إغلاق النوافذ المنبثقة
-        function closeModal(id) {
-            document.getElementById(id).classList.add('hidden');
-        }
-
-        // فتح النوافذ
-        function openGeminiModal() { document.getElementById('geminiModal').classList.remove('hidden'); }
-        function openTelegramModal() { document.getElementById('telegramModal').classList.remove('hidden'); }
-        function openArabModal() { document.getElementById('arabModal').classList.remove('hidden'); }
-        function openForeignModal() { document.getElementById('foreignModal').classList.remove('hidden'); }
-
-        // إرسال الطلبات للواتساب
-        function submitGeminiOrder() {
-            const email = document.getElementById('gemini-email').value;
-            const pass = document.getElementById('gemini-pass').value;
-            if(!email || !pass) { alert("يرجى كتابة البريد وكلمة المرور!"); return; }
-            const msg = encodeURIComponent(أرغب في شراء اشتراك جميناي بريميوم ($10)\nالبريد: ${email}\nكلمة المرور: ${pass});
+        // 1. طلب اشتراك جميناي بريميوم
+        function openGeminiModal() {
+            const email = prompt("يرجى كتابة البريد الإلكتروني الخاص بحسابك على جميناي:");
+            if (!email) return;
+            const pass = prompt("يرجى كتابة كلمة المرور للبريد:");
+            if (!pass) return;const msg = encodeURIComponent(أرغب في شراء اشتراك جميناي بريميوم ($10)\nالبريد: ${email}\nكلمة المرور: ${pass});
             window.open(https://wa.me/963984335910?text=${msg}, '_blank');
-            closeModal('geminiModal');
         }
 
-        function submitTelegramOrder() {
-            const user = document.getElementById('telegram-username').value;
-            if(!user) { alert("يرجى كتابة اسم المستخدم (اليوزر)!"); return; }
+        // 2. طلب تفعيل تلغرام بريميوم
+        function openTelegramModal() {
+            const user = prompt("أدخل اسم المستخدم (اليوزر) لحسابك على التلغرام (مثال: @username):");
+            if (!user) return;
+
             const msg = encodeURIComponent(أرغب في تفعيل تلغرام بريميوم ($10)\nاسم المستخدم: ${user});
             window.open(https://wa.me/963984335910?text=${msg}, '_blank');
-            closeModal('telegramModal');
         }
 
-        function submitArabOrder() {const country = document.getElementById('arab-country').value;
+        // 3. طلب أرقام واتساب عربية
+        function openArabModal() {
+            const country = prompt("اختر الدولة (اكتب: السعودية أو الأردن أو الكويت):", "السعودية");
+            if (!country) return;
+
             const msg = encodeURIComponent(أرغب في شراء رقم واتساب عربي ($7)\nالدولة المختارة: ${country});
             window.open(https://wa.me/963984335910?text=${msg}, '_blank');
-            closeModal('arabModal');
         }
 
-        function submitForeignOrder() {
-            const country = document.getElementById('foreign-country').value;
+        // 4. طلب أرقام واتساب أجنبية
+        function openForeignModal() {
+            const country = prompt("اختر الدولة (اكتب: إندونيسيا أو فيتنام أو إيران):", "إندونيسيا");
+            if (!country) return;
+
             const msg = encodeURIComponent(أرغب في شراء رقم واتساب أجنبي ($7)\nالدولة المختارة: ${country});
             window.open(https://wa.me/963984335910?text=${msg}, '_blank');
-            closeModal('foreignModal');
         }
 
         // طلب رقم OTP العام
@@ -480,16 +390,15 @@
                     body: JSON.stringify({ code: code })
                 });
 
-                const data = await res.json();
-
-                if (data.success) {
+                const data = await res.json();if (data.success) {
                     msg.className = "text-xs mt-2 text-emerald-400 font-bold";
                     msg.innerText = ✅ ${data.message} تم إضافة $${data.amount} إلى رصيدك!;
 
                     let currentBalance = parseFloat(localStorage.getItem("userBalance") || "0.00");
                     let newBalance = currentBalance + data.amount;
                     localStorage.setItem("userBalance", newBalance);
-                    document.getElementById("user-balance").innerText = newBalance.toFixed(2);input.value = "";
+                    document.getElementById("user-balance").innerText = newBalance.toFixed(2);
+                    input.value = "";
                 } else {
                     msg.className = "text-xs mt-2 text-rose-400 font-bold";
                     msg.innerText = ❌ ${data.message};
