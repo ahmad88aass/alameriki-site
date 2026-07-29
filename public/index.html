@@ -11,27 +11,16 @@
     <!-- Animate.css للمؤثرات والحركات -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <style>
-        .card-glow {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .card-glow:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 25px -5px rgba(59, 130, 246, 0.25);
-        }
-        .btn-click {
-            transition: transform 0.1s ease;
-        }
-        .btn-click:active {
-            transform: scale(0.96);
-        }
+        .card-glow { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .card-glow:hover { transform: translateY(-4px); box-shadow: 0 12px 25px -5px rgba(59, 130, 246, 0.25); }
+        .btn-click { transition: transform 0.1s ease; }
+        .btn-click:active { transform: scale(0.96); }
     </style>
 </head>
 <body class="bg-slate-950 text-white min-h-screen font-sans antialiased selection:bg-blue-600 selection:text-white">
 
     <!-- الهيدر الرئيسي -->
     <header class="bg-slate-900/90 backdrop-blur-md sticky top-0 z-50 border-b border-slate-800 py-4 px-6 flex flex-col md:flex-row justify-between items-center shadow-2xl gap-4 animateanimated animatefadeInDown">
-        
-        <!-- قسم الشعار والعنوان -->
         <div class="flex items-center gap-4 text-center md:text-right">
             <div class="relative bg-gradient-to-tr from-blue-600 to-indigo-600 p-3 rounded-2xl shadow-lg shadow-blue-500/20 text-white flex items-center justify-center">
                 <i class="fas fa-shield-halved text-2xl"></i>
@@ -42,8 +31,6 @@
                 <p class="text-xs font-bold text-amber-400 mt-0.5">مع الأمريكي احصل على رقمك وخدمتك خلال ثواني 🚀</p>
             </div>
         </div>
-
-        <!-- أزرار التواصل المباشر -->
         <div class="flex gap-3">
             <a href="https://wa.me/963984335910" target="_blank" class="bg-emerald-600 hover:bg-emerald-500 px-4 py-2 rounded-xl text-sm font-bold flex items-center gap-2 transition shadow-lg shadow-emerald-600/20 btn-click">
                 <i class="fab fa-whatsapp text-lg"></i> واتساب
@@ -52,41 +39,43 @@
                 <i class="fab fa-telegram text-lg"></i> تلغرام
             </a>
         </div>
-
     </header>
 
     <main class="max-w-6xl mx-auto p-4 md:p-8 space-y-10">
         
-        <!-- قسم رصيد الحساب وشحن المحفظة -->
+        <!-- قسم رصيد الحساب وشحن المحفظة عبر الأيدي (Telegram ID) -->
         <div class="bg-slate-900/90 p-6 rounded-3xl border border-emerald-500/30 shadow-2xl animateanimated animatefadeInUp">
           <div class="flex flex-col md:flex-row justify-between items-center gap-6">
             
+            <!-- عرض الرصيد والأيدي -->
             <div class="flex items-center gap-4">
                 <div class="p-4 bg-emerald-500/10 border border-emerald-500/20 rounded-2xl text-emerald-400">
                     <i class="fas fa-wallet text-3xl"></i>
                 </div>
                 <div>
-                  <h3 class="text-gray-400 text-xs mb-1">الرصيد المتاح بالحساب:</h3>
+                  <h3 class="text-gray-400 text-xs mb-1">الرصيد المتاح (الأيدي: <span id="display-telegram-id" class="text-amber-400 font-mono">غير متصل</span>):</h3>
                   <div class="text-3xl font-black text-emerald-400 tracking-tight">$<span id="user-balance">0.00</span></div>
                 </div>
             </div>
 
-            <div class="w-full md:w-auto flex-1 max-w-md"><p class="text-xs text-gray-300 mb-2">
-                💡 لشحن الرصيد (أقل شحنة <span class="text-amber-400 font-bold">5$</span> عبر شام كاش): 
-                <a href="https://wa.me/963984335910?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%B4%D8%AD%D9%86%20%D8%B1%D8%B5%D9%8A%D8%AF" target="_blank" class="text-amber-400 font-bold underline hover:text-amber-300">
-                    اضغط هنا للتواصل وشحن الرصيد
-                </a>.
-              </p>
-              
+            <!-- إدخال الايدي وكود الشحن -->
+            <div class="w-full md:w-auto flex-1 max-w-md space-y-3"><div class="flex gap-2">
+                <input type="text" id="telegram-id-input" placeholder="أدخل أيدي التلغرام الخاص بك (Telegram ID)..." 
+                       class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-2 text-white text-xs focus:outline-none focus:border-emerald-500 transition font-mono">
+                <button type="button" onclick="saveTelegramId()" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-4 py-2 rounded-xl text-xs transition">
+                    حفظ الأيدي
+                </button>
+              </div>
+
               <div class="flex gap-2">
-                <input type="text" id="voucher-code" placeholder="أدخل كود الشحن هنا..." 
+                <input type="text" id="voucher-code" placeholder="أدخل كود الشحن..." 
                        class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-emerald-500 transition">
                 <button type="button" id="btn-redeem" 
                         class="bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-black px-6 py-2.5 rounded-xl text-sm transition shadow-lg shadow-emerald-500/20 btn-click">
-                  شحن
+                  شحن برصيد الأيدي
                 </button>
               </div>
-              <p id="voucher-msg" class="text-xs mt-2 hidden"></p>
+              <p id="voucher-msg" class="text-xs mt-1 hidden"></p>
             </div>
 
           </div>
@@ -105,7 +94,7 @@
                             <i class="fas fa-user-check text-purple-400"></i> خدمة ترجيع الحسابات المعلقة والطعن الاحترافي
                         </h2>
                         <p class="text-sm text-gray-300 leading-relaxed">
-                            متخصصون في استرجاع الحسابات المعلقة (Instagram / Facebook)، تقديم طعن احترافي مدعوم بأقوى الحجج والمتابعة حتى النتيجة. حل كافة مشاكل التعطيل بضمان أعلى نسب النجاح.
+                            متخصصون في استرجاع الحسابات المعلقة (Instagram / Facebook)، تقديم طعن احترافي مدعوم بأقوى الحجج والمتابعة حتى النتيجة.
                         </p>
                     </div>
                     <div class="w-full md:w-auto flex flex-col items-center gap-3 bg-slate-950/80 p-5 rounded-2xl border border-purple-500/30 text-center min-w-[220px]">
@@ -119,15 +108,15 @@
             </div>
         </section>
 
-        <!-- قسم الاشتراكات والخدمات المميزة (مُضاف إليه خدمة توثيق إنستغرام) -->
+        <!-- قسم الاشتراكات والخدمات المميزة (مُضاف إليه توثيق إنستغرام 15$) -->
         <section class="space-y-4 animateanimated animatefadeInUp">
             <h2 class="text-xl font-bold text-purple-400 flex items-center gap-2 border-r-4 border-purple-500 pr-3"><i class="fas fa-gem"></i> الاشتراكات والخدمات المميزة
             </h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 
-                <!-- جديد: توثيق حسابات إنستغرام -->
+                <!-- خدمة توثيق إنستغرام الشهري -->
                 <div class="bg-slate-900 p-6 rounded-2xl border border-pink-500/30 shadow-xl flex flex-col justify-between card-glow relative overflow-hidden">
-                    <div class="absolute top-0 left-0 bg-pink-500 text-white text-[10px] font-bold px-3 py-1 rounded-br-xl">حسرة وشهرة</div>
+                    <div class="absolute top-0 left-0 bg-pink-500 text-white text-[10px] font-bold px-3 py-1 rounded-br-xl">رسمي وموثق</div>
                     <div>
                         <div class="flex justify-between items-start mb-3">
                             <span class="bg-pink-500/10 text-pink-400 text-xs px-3 py-1 rounded-full border border-pink-500/20 font-semibold">اشتراك شهري</span>
@@ -137,7 +126,7 @@
                             <i class="fab fa-instagram text-pink-500 text-xl"></i> توثيق حسابات إنستغرام (Meta Verified)
                         </h3>
                         <p class="text-sm text-gray-400 leading-relaxed mb-4">
-                            احصل على العلامة الزرقاء الرسمية لحسابك في إنستغرام، مع حماية مشددة للحساب ودعم فني مباشر.
+                            الحصول على العلامة الزرقاء الرسمية لحسابك في إنستغرام مع حماية ودعم فني متكامل لمدة شهر.
                         </p>
                     </div>
                     <a href="javascript:void(0)" onclick="buyService('توثيق حساب إنستغرام (الشارة الزرقاء)', '15$')" class="w-full bg-pink-600 hover:bg-pink-500 text-white font-extrabold py-3 rounded-xl transition text-center flex justify-center items-center gap-2 shadow-lg shadow-pink-600/20 btn-click">
@@ -153,7 +142,7 @@
                             <span class="text-2xl font-black text-purple-400">$10</span>
                         </div>
                         <h3 class="text-lg font-bold text-white mb-2 flex items-center gap-2">
-                            <i class="fas fa-robot text-purple-400"></i> اشتراك جميناي بريميوم (Gemini Premium)
+                            <i class="fas fa-robot text-purple-400"></i> اشتراك جميناي بريميوم (Gemini)
                         </h3>
                         <p class="text-sm text-gray-400 leading-relaxed mb-4">
                             تفعيل الذكاء الاصطناعي الخاص بـ Gemini بأعلى سرعة وأداء متميز بدون قيود لمدة شهر كامل.
@@ -192,7 +181,6 @@
             </h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 
-                <!-- أرقام واتساب عربية -->
                 <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 shadow-xl flex flex-col justify-between card-glow border-emerald-500/20">
                     <div>
                         <div class="flex justify-between items-start mb-3">
@@ -211,7 +199,6 @@
                     </a>
                 </div>
 
-                <!-- أرقام واتساب أجنبية -->
                 <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 shadow-xl flex flex-col justify-between card-glow border-teal-500/20">
                     <div>
                         <div class="flex justify-between items-start mb-3">
@@ -222,8 +209,8 @@
                             <i class="fas fa-globe-americas text-teal-400"></i> أرقام واتساب أجنبية
                         </h3>
                         <p class="text-sm text-gray-400 leading-relaxed mb-4">
-                            تفعيل واتساب بأرقام أجنبية مضمونة (إندونيسيا، فيتنام، إيران) مفعلة وجاهزة فوراً.</p>
-                    </div>
+                            تفعيل واتساب بأرقام أجنبية مضمونة (إندونيسيا، فيتنام، إيران) مفعلة وجاهزة فوراً.
+                        </p></div>
                     <a href="javascript:void(0)" onclick="buyService('رقم واتساب أجنبي', '7$')" class="w-full bg-teal-600 hover:bg-teal-500 text-white font-extrabold py-3 rounded-xl transition text-center flex justify-center items-center gap-2 shadow-lg shadow-teal-600/20 btn-click">
                         <i class="fas fa-globe"></i> اختيار الدولة والشراء ($7)
                     </a>
@@ -311,17 +298,36 @@
 
     </main>
 
-    <!-- JavaScript المعالج بدون أخطاء -->
+    <!-- JavaScript المنظم جداً -->
     <script>
         const WHATSAPP_NUM = "963984335910";
 
-        // دالة موحدة ومباشرة لكل خدمات الشراء
+        // دالة حفظ الأيدي الخاص بالتلغرام
+        function saveTelegramId() {
+            const inputId = document.getElementById("telegram-id-input").value.trim();
+            if (!inputId) {
+                alert("الرجاء إدخال أيدي تلغرام صحيح!");
+                return;
+            }
+            localStorage.setItem("userTelegramId", inputId);
+            document.getElementById("display-telegram-id").innerText = inputId;
+            loadUserBalance(inputId);
+            alert("تم حفظ الأيدي بنجاح وتربِط رصيدك به!");
+        }
+
+        // جلب الرصيد حسب الأيدي المخزن
+        function loadUserBalance(telegramId) {
+            let balances = JSON.parse(localStorage.getItem("telegramBalances") || "{}");
+            let userBal = balances[telegramId] || 0.00;
+            document.getElementById("user-balance").innerText = parseFloat(userBal).toFixed(2);
+        }
+
+        // دالة الطلب والشراء مع تضمين أيدي الزبون ورقم حسابه
         function buyService(serviceName, price) {
             try {
-                const info = prompt(طلب ${serviceName} (${price}):\nيرجى إدخال الحساب أو التفاصيل للبدء:);
-                if (!info || info.trim() === "") return;
-
-                const textMessage = مرحباً، أرغب في طلب خدمة: ${serviceName} (${price})\nالتفاصيل/الحساب: ${info};
+                const currentId = localStorage.getItem("userTelegramId") || "غير محدد";
+                const info = prompt(طلب ${serviceName} (${price})\nأيدي التلغرام الخاص بك: ${currentId}\nيرجى إدخال الحساب أو التفاصيل المطلوبة للخدمة:);
+                if (!info || info.trim() === "") return;const textMessage = مرحباً، أرغب في طلب خدمة: ${serviceName} (${price})\nأيدي التلغرام: ${currentId}\nتفاصيل الحساب: ${info};
                 const url = https://wa.me/${WHATSAPP_NUM}?text=${encodeURIComponent(textMessage)};
                 
                 window.open(url, '_blank');
@@ -331,52 +337,69 @@
             }
         }
 
-        // ربط زر الشحن
+        // التهيئة عند فتح الصفحة
         document.addEventListener("DOMContentLoaded", () => {
-            // تحميل الرصيد
-            let balance = localStorage.getItem("userBalance") || "0.00";
-            const balEl = document.getElementById("user-balance");
-            if (balEl) balEl.innerText = parseFloat(balance).toFixed(2);
+            // محاولة التقاط الأيدي إن وجد في التخزين
+            const savedId = localStorage.getItem("userTelegramId");
+            if (savedId) {
+                document.getElementById("telegram-id-input").value = savedId;
+                document.getElementById("display-telegram-id").innerText = savedId;
+                loadUserBalance(savedId);
+            }
 
-            // زر الشحن
+            // زر الشحن عبر كود الشحن المرتبط بالأيدي
             const redeemBtn = document.getElementById("btn-redeem");
             if (redeemBtn) {
                 redeemBtn.addEventListener("click", async () => {
-                    const input = document.getElementById("voucher-code");
+                    const currentId = localStorage.getItem("userTelegramId");
                     const msg = document.getElementById("voucher-msg");
-                    if (!input || !msg) return;const code = input.value.trim();
+                    const input = document.getElementById("voucher-code");
+                    
+                    if (!currentId) {
+                        alert("الرجاء إدخال وحفظ (أيدي التلغرام) أولاً لكي يتم شحن الرصيد لحسابك!");
+                        return;
+                    }
+
+                    const code = input.value.trim();
                     if (!code) {
                         msg.className = "text-xs mt-2 text-rose-400";
-                        msg.innerText = "⚠️ يرجى إدخال كود الشحن أولاً.";
+                        msg.innerText = "⚠️ يرجى إدخال كود الشحن.";
                         msg.classList.remove("hidden");
                         return;
                     }
 
                     msg.className = "text-xs mt-2 text-amber-400";
-                    msg.innerText = "⏳ جاري التحقق من الكود...";
+                    msg.innerText = "⏳ جاري شحن رصيد الأيدي...";
                     msg.classList.remove("hidden");
 
                     try {
+                        // محاكاة الاتصال بالسيرفر لشحن الأيدي
                         const res = await fetch("/api/redeem", {
                             method: "POST",
                             headers: { "Content-Type": "application/json" },
-                            body: JSON.stringify({ code: code })
+                            body: JSON.stringify({ telegram_id: currentId, code: code })
                         });
                         const data = await res.json();
+                        
                         if (data.success) {
                             msg.className = "text-xs mt-2 text-emerald-400 font-bold";
-                            msg.innerText = ✅ ${data.message} تم إضافة $${data.amount} إلى رصيدك!;
-                            let newBal = parseFloat(localStorage.getItem("userBalance") || "0.00") + data.amount;
-                            localStorage.setItem("userBalance", newBal);
-                            if (balEl) balEl.innerText = newBal.toFixed(2);
+                            msg.innerText = ✅ تم الشحن بنجاح! أضيف $${data.amount} إلى الأيدي: ${currentId};
+                            
+                            // تحديث محلي للتخزين بناءً على الأيدي
+                            let balances = JSON.parse(localStorage.getItem("telegramBalances") || "{}");
+                            balances[currentId] = (balances[currentId] || 0) + data.amount;
+                            localStorage.setItem("telegramBalances", JSON.stringify(balances));
+                            
+                            loadUserBalance(currentId);
                             input.value = "";
                         } else {
                             msg.className = "text-xs mt-2 text-rose-400 font-bold";
-                            msg.innerText = ❌ ${data.message};
+                            msg.innerText = ❌ ${data.message || 'كود الشحن غير صالح'};
                         }
                     } catch (e) {
-                        msg.className = "text-xs mt-2 text-rose-400";
-                        msg.innerText = "❌ حدث خطأ، يمكنك التواصل مع الدعم للشحن المباشر.";
+                        // نظام احتياطي في حال لم يكن هناك سيرفر خلفي جاهز بعد لكي يظهر للمطور
+                        msg.className = "text-xs mt-2 text-emerald-400 font-bold";msg.innerText = ✅ تم إرسال طلب الشحن للأيدي (${currentId}). تواصل معنا لتأكيد الكود.;
+                        window.open(https://wa.me/${WHATSAPP_NUM}?text=${encodeURIComponent('أرغب بشحن رصيد للأيدي الخاص بي: ' + currentId + ' بكود: ' + code)}, '_blank');
                     }
                 });
             }
